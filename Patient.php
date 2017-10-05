@@ -57,23 +57,33 @@ class Patient
         $this->pesel = $pesel;
     }
 
-    public function saveUserToDB()
+    public function savePatientToDB()
     {
 
-        echo $sql = "INSERT INTO patients (name, dob, pesel) VALUES ("
+        $sql = "INSERT INTO patients (name, dob, pesel) VALUES ("
             . "'" . $this->getName() . "',"
             . $this->getDob() . ","
             . $this->getPesel()
             . ")";
 
-
-
         return $sql;
 
     }
 
-    public function addHeight($id, $patient)
+    public function setHeight($id, $height)
     {
+        $this->height = $height;
+        $sql = "UPDATE patients SET height = " . $height . " WHERE id = " . $id ;
 
+        return $sql;
     }
+
+    public function setWeight($id, $weight)
+    {
+        $this->weight = $weight;
+        $sql = "UPDATE patients SET weight = " . $weight . " WHERE id = " . $id ;
+
+        return $sql;
+    }
+
 }

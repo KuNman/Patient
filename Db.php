@@ -67,6 +67,10 @@ class Db {
         return $rows;
     }
 
+    public function selectWithDiseases($query) {
+
+    }
+
     /**
      * Fetch the last error from the database
      *
