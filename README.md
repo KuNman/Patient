@@ -7,11 +7,11 @@ Patient class
 - Weight
 
 Diseases class
-- type
-- name
-- date
-- medicine
+- Type
+- Name
+- Date
+- Medicine
 
 UnitCalc class
-- inches
-- pounds
+- Inches
+- Pounds
