@@ -87,17 +87,24 @@ class Patient extends Db
         return $sql;
     }
 
-    public function showPatientsInfo($patientsIdArray)
+    public function showPatientsInfo($patientsIdArray, $units = "Eu")
     {
 
         if (!empty($patientsIdArray)) {
             $query = new Db();
         }
 
+        if ($units == "Us") {
+            foreach ($patientsIdArray as $patientId) {
+                $sql = "SELECT * FROM patients WHERE id = $patientId";
+                $result = $query->selectAndConvert($sql);
+            }
+        } else
         foreach ($patientsIdArray as $patientId) {
             $sql = "SELECT * FROM patients WHERE id = $patientId";
             $result = $query->select($sql);
         }
+
     }
 
     public function showPatientsDiseases($patientId)
@@ -106,6 +113,5 @@ class Patient extends Db
 
         return $sql;
     }
-
 
 }

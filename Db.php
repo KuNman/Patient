@@ -3,6 +3,8 @@
 class Db {
     // The database connection
     protected static $connection;
+    protected static $inch = 0.39;
+    protected static $pound = 2.2;
 
     /**
      * Connect to the database
@@ -59,6 +61,34 @@ class Db {
             $rows[] = $row;
         }
         var_dump($rows);
+        return $rows;
+
+    }
+
+    public function selectAndConvert($query) {
+        $rows = array();
+        $rowsConverted = array();
+        $result = $this -> query($query);
+        if($result === false) {
+            return false;
+        }
+        while ($row = $result -> fetch_assoc()) {
+            $rows[] = $row;
+            foreach ($rows as $person) {
+                $rowsConverted['id'] = $person['id'];
+                $rowsConverted['name'] = $person['name'];
+                $rowsConverted['dob'] = $person['dob'];
+                $rowsConverted['pesel'] = $person['pesel'];
+                if ($person['height']) {
+                    $rowsConverted['height'] = ($person['height'] * $this::$inch);
+
+                }
+                if ($person['weight']) {
+                    $rowsConverted['weight'] = ($person['weight'] * $this::$pound);
+                }
+            }
+        }
+        var_dump($rowsConverted);
         return $rows;
 
     }

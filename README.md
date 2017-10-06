@@ -11,7 +11,3 @@ Diseases class
 - Name
 - Date
 - Medicine
-
-UnitCalc class
-- Inches
-- Pounds
