@@ -19,7 +19,7 @@ class Db {
         // Try and connect to the database
         if(!isset(self::$connection)) {
             // Load configuration as an array. Use the actual location of your configuration file
-            self::$connection = new mysqli('localhost','root','coderslab','patient');
+            self::$connection = new mysqli('localhost','root','x','patient');
         }
 
         // If connection was not successful, handle the error
