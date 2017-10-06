@@ -2,10 +2,10 @@
 
 class Disease
 {
-    public function __construct($customerId, $type, $date, $medicine)
+    public function __construct($type, $patientId, $date, $medicine)
     {
-        $this->customerId = $customerId;
         $this->type = $type;
+        $this->patientId = $patientId;
         $this->date = $date;
         $this->medicine = $medicine;
     }
@@ -13,17 +13,17 @@ class Disease
     /**
      * @return mixed
      */
-    public function getCustomerId()
+    public function getPatientId()
     {
-        return $this->customerId;
+        return $this->patientId;
     }
 
     /**
-     * @param mixed $customerID
+     * @param mixed $patientID
      */
-    public function setCustomerId($customerId)
+    public function setPatientId($patientId)
     {
-        $this->customerId = $customerId;
+        $this->patientId = $patientId;
     }
 
     /**
@@ -76,8 +76,8 @@ class Disease
 
     public function saveDiseaseToDB()
     {
-       echo $sql = "INSERT INTO disease (customerID, type, date, medicine) VALUES ("
-        . $this->getCustomerId() . " ,"
+       echo $sql = "INSERT INTO disease (patientID, type, date, medicine) VALUES ("
+        . $this->getPatientId() . " ,"
         . "'" . $this->getType() . "',"
         . "'" . $this->getDate() . "',"
         . "'" . $this->getMedicine()

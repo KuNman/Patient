@@ -13,8 +13,8 @@ $query = new Db();
 //$result = $query->query($patient->setHeight(2, 150));
 // set or update weight
 //$result = $query->query($patient->setWeight(1,50));
-$disease = new Disease(2,'cancer', '2017-01-01', 'chemotherapy');
+//$disease = new Disease('cancer', 1, '2017-01-10', 'chemotherapy');
 // add patient's disease in diseases table
 //$result = $query->query($disease->saveDiseaseToDB());
-// search customer and his diseases
-$patient = $patient->getName();
+// search patient and his diseases
+//$result = $query->select($patient->searchPatientsDiseases(1));

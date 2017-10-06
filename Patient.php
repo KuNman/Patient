@@ -86,4 +86,11 @@ class Patient
         return $sql;
     }
 
+    public function searchPatientsDiseases($patientId)
+    {
+        $sql = "SELECT DISTINCT type FROM disease WHERE patientId = $patientId"  ;
+
+        return $sql;
+    }
+
 }

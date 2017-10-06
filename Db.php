@@ -65,9 +65,6 @@ class Db {
             $rows[] = $row;
         }
         return $rows;
-    }
-
-    public function selectWithDiseases($query) {
 
     }
 
