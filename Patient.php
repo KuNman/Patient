@@ -1,6 +1,7 @@
 <?php
+require_once 'Db.php';
 
-class Patient
+class Patient extends Db
 {
     public function __construct($name, $dob, $pesel)
     {
@@ -86,11 +87,25 @@ class Patient
         return $sql;
     }
 
-    public function searchPatientsDiseases($patientId)
+    public function showPatientsInfo($patientsIdArray)
     {
-        $sql = "SELECT DISTINCT type FROM disease WHERE patientId = $patientId"  ;
+
+        if (!empty($patientsIdArray)) {
+            $query = new Db();
+        }
+
+        foreach ($patientsIdArray as $patientId) {
+            $sql = "SELECT * FROM patients WHERE id = $patientId";
+            $result = $query->select($sql);
+        }
+    }
+
+    public function showPatientsDiseases($patientId)
+    {
+        $sql = "SELECT DISTINCT type FROM disease WHERE patientId = $patientId" ;
 
         return $sql;
     }
+
 
 }

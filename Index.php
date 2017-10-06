@@ -16,5 +16,8 @@ $query = new Db();
 //$disease = new Disease('cancer', 1, '2017-01-10', 'chemotherapy');
 // add patient's disease in diseases table
 //$result = $query->query($disease->saveDiseaseToDB());
+//search patients info
+//$patientsIdArray = [1,3,60];
+//$result = $query->select($patient->showPatientsInfo($patientsIdArray));
 // search patient and his diseases
-//$result = $query->select($patient->searchPatientsDiseases(1));
+//$result = $query->select($patient->showPatientsDiseases(1));

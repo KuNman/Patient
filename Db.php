@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kn
- * Date: 05/10/2017
- * Time: 23:19
- */
 
 class Db {
     // The database connection
@@ -19,7 +13,7 @@ class Db {
         // Try and connect to the database
         if(!isset(self::$connection)) {
             // Load configuration as an array. Use the actual location of your configuration file
-            self::$connection = new mysqli('localhost','root','x','patient');
+            self::$connection = new mysqli('localhost','root','coderslab','patient');
         }
 
         // If connection was not successful, handle the error
@@ -64,6 +58,7 @@ class Db {
         while ($row = $result -> fetch_assoc()) {
             $rows[] = $row;
         }
+        var_dump($rows);
         return $rows;
 
     }
