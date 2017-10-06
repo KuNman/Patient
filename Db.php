@@ -80,11 +80,11 @@ class Db {
                 $rowsConverted['dob'] = $person['dob'];
                 $rowsConverted['pesel'] = $person['pesel'];
                 if ($person['height']) {
-                    $rowsConverted['height'] = ($person['height'] * $this::$inch);
+                    $rowsConverted['height'] = ($person['height'] * self::$inch);
 
                 }
                 if ($person['weight']) {
-                    $rowsConverted['weight'] = ($person['weight'] * $this::$pound);
+                    $rowsConverted['weight'] = ($person['weight'] * self::$pound);
                 }
             }
         }
