@@ -8,6 +8,7 @@ Patient class
 
 Diseases class
 - Type
+- Patient ID
 - Name
 - Date
 - Medicine
